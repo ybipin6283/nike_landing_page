@@ -1,1 +1,4 @@
-# This repo will be used as a sample project for Day7 of Azure DevOps Zero to Hero video solution
+# Nike Website.
+- We have mentioned the yml pipeline code.
+- website is running, but we haven't received the running status yet.
+- 
