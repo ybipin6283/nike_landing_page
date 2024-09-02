@@ -1,0 +1,26 @@
+
+trigger:
+- main
+
+pool:
+  name: azure-runner
+
+stages:
+  - stage: build
+    jobs:
+     - job: build
+       steps:
+       - task: Npm@1
+         inputs:
+           command: 'custom'
+           customCommand: 'install -D tailwindcss postcss autoprefixer'
+       - task: Npm@1
+         inputs:
+           command: 'custom'
+           customCommand: 'run build'
+       - task: Npm@1
+         inputs:
+           command: 'publish'
+           workingDir: './dist'
+           publishRegistry: 'useFeed'
+           publishFeed: '025476f6-3d75-40ba-bedf-b55620af6b73'
